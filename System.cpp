@@ -171,6 +171,16 @@ int main()
 
                 break;
             }
+
+            case 4:{
+                cout<<"-----Thank You!!!-----"<<"\n";
+                break;
+            }
+
+            default:
+                cout<<"Enter a valid choice";
+            
+
         }        
     }while(choice != 4);
     return 0;
