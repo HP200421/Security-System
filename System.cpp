@@ -33,7 +33,7 @@ int main()
             case 1:{
                 cout<<"_______________________________"<<"\n";
                 cout<<"|                             |"<<"\n";
-                cout<<"|        1. Register          |"<<"\n";
+                cout<<"|           Register          |"<<"\n";
                 cout<<"|_____________________________|"<<"\n"<<"\n"; 
                 cout<<"Please enter username: ";
                 cin>>name;
@@ -48,7 +48,63 @@ int main()
                     of1<<name<<"\n";
                     of1<<password0<<"\n";
 
-                    cout<<"Registration Successful"<<"\n";
+                    cout<<"-----Registration Successful-----"<<"\n";
+                }
+
+                break;
+            }
+
+            case 2:{
+                i=0;
+
+                cout<<"_______________________________"<<"\n";
+                cout<<"|                             |"<<"\n";
+                cout<<"|            Login            |"<<"\n";
+                cout<<"|_____________________________|"<<"\n"<<"\n"; 
+
+                ifstream if1;
+                if1.open("file.text");
+                cout<<"Please enter username: ";
+                cin>>user;
+                cout<<"Please enter the password: ";
+                cin>>pass;
+
+                if(if1.is_open()){
+                    while(!if1.eof())
+                    {
+                        while(getline(if1,text)){
+                            istringstream iss(text); 
+                            iss>>word;
+                            creds[i]=word;
+                            i++;  
+                        }
+
+                        if(user == creds[0] && pass == creds[1])
+                        {
+                            cout<<"-----Login Successful-----"<<"\n"<<"\n";
+
+                            cout<<"Details: "<<"\n";
+
+                            cout<<"Username: "+name<<"\n";
+                            cout<<"Password: "+pass<<"\n";
+                            cout<<"Age: "+age<<"\n";
+                        }
+                        else
+                        {
+                            cout<<"\n"<<"\n";
+
+                            
+
+                            cout<<"       Incorrect Credentials "<<"\n";
+
+                            cout<<"________________________________________"<<"\n";
+                            cout<<"|                                      |"<<"\n";
+                            cout<<"|        1. Press 2 to Login           |"<<"\n";
+                            cout<<"|        2. Press 3 to Change Password |"<<"\n";
+                            cout<<"|______________________________________|"<<"\n"<<"\n"; 
+                            break;
+                        }
+                    }
                 }
 
                 break;
