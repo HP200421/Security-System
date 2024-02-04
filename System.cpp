@@ -85,9 +85,9 @@ int main()
 
                             cout<<"Details: "<<"\n";
 
-                            cout<<"Username: "+name<<"\n";
-                            cout<<"Password: "+pass<<"\n";
-                            cout<<"Age: "+age<<"\n";
+                            cout<<"Username: "+ name<<"\n";
+                            cout<<"Password: "+ pass<<"\n";
+                            cout<<"Age: "+ age<<"\n";
                         }
                         else
                         {
@@ -171,6 +171,16 @@ int main()
 
                 break;
             }
+
+            case 4:{
+                cout<<"-----Thank You!!!-----"<<"\n";
+                break;
+            }
+
+            default:
+                cout<<"Enter a valid choice";
+            
+
         }        
     }while(choice != 4);
     return 0;
