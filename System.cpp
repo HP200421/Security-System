@@ -46,7 +46,7 @@ int main()
                 of1.open("file.txt");
                 if(of1.is_open()){
                     of1<<name<<"\n";
-                    of1<<password0<<"\n";
+                    of1<<password0;
 
                     cout<<"-----Registration Successful-----"<<"\n";
                 }
@@ -105,6 +105,68 @@ int main()
                             break;
                         }
                     }
+                }
+
+                break;
+            }
+
+            case 3:{
+                i=0;
+
+                cout<<"-----Change Password-----"<<"\n";
+
+                ifstream if2;
+                if2.open("file.text");
+                cout<<"Enter the old password: ";
+                cin>>old;
+
+                if(if2.is_open())
+                {
+                    while(if2.eof())
+                    {
+                        while(getline(if2,text))
+                        {
+                            istringstream iss(text); 
+                            iss>>word1;
+                            cp[i]=word;
+                            i++;
+                        }
+
+                        if(old == cp[1])
+                        {
+                            if2.close();
+
+                            ofstream of1;
+                            if(of1.is_open())
+                            {
+                                cout<<"Enter your new password: ";
+                                cin>>password1;
+                                cout<<"Enter your password again: ";
+                                cin>>password2;
+
+                                if(password1 == password2)
+                                {
+                                    of1<<cp[0]<<"\n";
+                                    of1<<password1;
+
+                                    cout<<"-----Password Change Successfully-----"<<"\n";
+                                }
+                                else
+                                {
+                                    of1<<cp[0]<<"\n";
+                                    of1<<old;
+
+                                    cout<<"-----Password do not match-----"<<"\n";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"Please enter a valid password"<<"\n"; 
+                            break;
+                        }
+                    }
+
                 }
 
                 break;
