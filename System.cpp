@@ -85,9 +85,9 @@ int main()
 
                             cout<<"Details: "<<"\n";
 
-                            cout<<"Username: "+name<<"\n";
-                            cout<<"Password: "+pass<<"\n";
-                            cout<<"Age: "+age<<"\n";
+                            cout<<"Username: "+ name<<"\n";
+                            cout<<"Password: "+ pass<<"\n";
+                            cout<<"Age: "+ age<<"\n";
                         }
                         else
                         {
